@@ -29,11 +29,15 @@ class SendMessage {
         echo WHITE . "Hello" . RESET . NL;
     }
 
-    function EmptyInput($text) : void {
-        echo ERROR . "Empty fileds: " . RESET . WHITE . $text . RESET . NL;
+    function InvalidInput($text) : void {
+        echo ERROR . "Invalid fileds: " . RESET . WHITE . $text . RESET . NL;
     }
 
     function InvalidCommand() : void {
         echo ERROR . "Invalid command. Check documentation or write " . RESET . WHITE . "php museum help" . RESET . NL;
+    }
+
+    function InvalidRegexDirection($directionName) : void {
+        echo ERROR . "Invalid direction name '" . $directionName . "'. Please, delete exist directory or send dont exist directory or dont write anything" . RESET . NL;
     }
 }

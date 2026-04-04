@@ -20,3 +20,33 @@ if ($mainArgemunt == null) {
     $sendMessage->main();
     exit;
 }
+
+$commands = ['make', 'help'];
+
+if (!in_array($mainArgemunt, $commands)) {
+    $sendMessage->InvalidCommand();
+    exit;
+}
+
+switch ($mainArgemunt) {
+    case "make": 
+        $type = $argv[2] ?? null;
+        $dirName = $argv[3] ?? "result";
+        $types = ['web'];
+        $regex = "#^[а-яА-Яa-zA-Z0-9]+$#u";
+        
+        if ($type == null) {
+            $sendMessage->InvalidInput("make without TYPE?");
+            exit;
+        }
+
+        if (!in_array($type, $types)) {
+            $sendMessage->InvalidInput("type '" . $type . "' dont exist");
+            exit;
+        }
+
+        if (!preg_match($regex, $dirName)) {
+            $sendMessage->InvalidRegexDirection($dirName);
+            exit;
+        }
+}
