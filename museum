@@ -31,8 +31,10 @@ if (!in_array($mainArgemunt, $commands)) {
 switch ($mainArgemunt) {
     case "make": 
         $type = $argv[2] ?? null;
-        $dirName = $argv[3] ?? "result";
+        $download = $argv[3] ?? "-l";
+        $dirName = $argv[4] ?? "result";
         $types = ['web'];
+        $typesDownload = ['-l', '-n'];
         $regex = "#^[а-яА-Яa-zA-Z0-9]+$#u";
         
         if ($type == null) {
@@ -42,6 +44,11 @@ switch ($mainArgemunt) {
 
         if (!in_array($type, $types)) {
             $sendMessage->InvalidInput("type '" . $type . "' dont exist");
+            exit;
+        }
+
+        if (!in_array($download, $typesDownload)) {
+            $sendMessage->InvalidInput("download type '" . $download . "' dont exist");
             exit;
         }
 
