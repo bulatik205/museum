@@ -38,6 +38,6 @@ class SendMessage {
     }
 
     function InvalidRegexDirection($directionName) : void {
-        echo ERROR . "Invalid direction name '" . $directionName . "'. Please, delete exist directory or send dont exist directory or dont write anything" . RESET . NL;
+        echo ERROR . "Invalid direction name '" . $directionName . "'. Please, delete exist directory or send dont exist directory" . RESET . NL;
     }
 }
