@@ -1,0 +1,22 @@
+<?php
+$mainArgemunt = $argv[1] ?? null;
+define('PATH_TO_TEXT_HANDLER', 'handlers/SendMessage.php');
+
+function logger(mixed $text, string $filePath = "general.log") {
+    $data = date('Y.m.d H:i:s');
+    file_put_contents($filePath, $data . " error >> " . $text . PHP_EOL, FILE_APPEND);
+}
+
+if (!file_exists(PATH_TO_TEXT_HANDLER)) {
+    echo "Script is broked. Reload now: \033[0m\033[1;31mgit clone https://github.com/bulatik205/museum.git\033[0m\n";
+    logger("Path " . PATH_TO_TEXT_HANDLER . " unavailable or this file dont exist");
+    exit;
+}
+
+require_once PATH_TO_TEXT_HANDLER;
+$sendMessage = new SendMessage;
+
+if ($mainArgemunt == null) {
+    $sendMessage->main();
+    exit;
+}
