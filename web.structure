@@ -7,6 +7,8 @@
         ├ index.php                     - directory index
     ├ dashboard/                        - dashboard for main redirect
         ├ index.php                     - directory index
+    ├ source/css/                       - styles directory
+        ├ ...                           - styles: compilated (css), original (scss)
     ├ handlers/                         - server handlers
         ├ registration/                 - handlers for registration
             ├ index.php                 - start route

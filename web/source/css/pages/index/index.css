@@ -1,0 +1,31 @@
+@import url("../../requirements.css");
+header {
+  width: 100%;
+  height: 1vh;
+  min-height: 10px;
+  max-height: 200px;
+  max-width: var(--max-width);
+  background-color: var(--main);
+  border-radius: 0px 0px 10px 10px;
+}
+
+main {
+  width: 100%;
+  max-width: var(--max-width);
+  min-height: 200px;
+  max-height: 1000px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main span {
+  font-size: clamp(20px, 5vw, 80px);
+}
+main h1 {
+  font-size: clamp(20px, 5vw, 80px);
+}
+main .info {
+  font-size: clamp(10px, 5vw, 30px);
+}/*# sourceMappingURL=index.css.map */
