@@ -13,6 +13,7 @@ header {
 main {
     width: 100%;
     max-width: var(--max-width);
+    height: 100vh;
     min-height: 200px;
     max-height: 1000px;
     padding: 20px;
@@ -46,6 +47,45 @@ main {
     .media {
         img {
             width: clamp(50px, 5vw, 100px);
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    max-width: var(--max-width);
+    min-height: 200px;
+    max-height: 1000px;
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #111;
+    color: #fff;
+
+    &__logo {
+        font-size: clamp(60px, 5vw, 80px);
+    }
+
+    &__desc {
+        max-width: 1000px;
+        font-size: clamp(12px, 5vw, 16px);
+    }
+
+    &__founder {
+        font-size: clamp(14px, 3vw, 20px);
+
+        a {
+            color: var(--main);
+            transition: all 0.3s ease;
+            text-decoration: none;
+
+            &:hover {
+                color: var(--main-hover);
+            }
         }
     }
 }
