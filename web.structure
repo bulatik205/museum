@@ -1,20 +1,22 @@
 ├ project/
-├ result/                               - or user name
-    ├ index.html                        - main page
-    ├ registration/                     - registration page 
-        ├ index.php                     - directory index
-    ├ login/                            - login page 
-        ├ index.php                     - directory index
-    ├ dashboard/                        - dashboard for main redirect
-        ├ index.php                     - directory index
-    ├ source/css/                       - styles directory
-        ├ ...                           - styles: compilated (css), original (scss)
-    ├ handlers/                         - server handlers
-        ├ registration/                 - handlers for registration
-            ├ index.php                 - start route
-            ├ ValidateInputs.php        - class which validate input data
-        ├ login/                        - handlers for login
-            ├ index.php                 - start route
-            ├ ValidateInputs.php        - class which validate input data
-        ├ user/                         - user handlers
-            ├ ValidateUser.php          - handler for validate user real logined
+├ result/                                   - or user name
+    ├ index.php                             - main page
+    ├ core/                                 - the core of ptoject
+        ├ router/                           - route the page
+            ├ index.php                     - router file
+        ├ handlers/                         - server handlers
+            ├ registration/                 - handlers for registration
+                ├ index.php                 - start route
+                ├ ValidateInputs.php        - class which validate input data
+            ├ login/                        - handlers for login
+                ├ index.php                 - start route
+                ├ ValidateInputs.php        - class which validate input data
+            ├ user/                         - user handlers
+                ├ ValidateUser.php          - handler for validate user real logined
+        ├ conf/                             - the config dir
+            ├ forms.config.php              - config for forms: dynamic update form
+            ├ database.config.php           - database mysql PDO connect
+    ├ source/css/                           - styles directory
+        ├ ...                               - styles: compilated (css), original (scss)
+    ├ frames/                               - the frame for view
+        ├ ... 
