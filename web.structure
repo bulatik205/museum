@@ -14,6 +14,7 @@
             ├ user/                         - user handlers
                 ├ ValidateUser.php          - handler for validate user real logined
         ├ conf/                             - the config dir
+            ├ index.php                     - builder all configs 
             ├ forms.config.php              - config for forms: dynamic update form
             ├ database.config.php           - database mysql PDO connect
     ├ source/css/                           - styles directory
