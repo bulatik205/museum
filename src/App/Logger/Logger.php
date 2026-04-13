@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Logger;
 
 class Logger
@@ -8,13 +9,15 @@ class Logger
         $logFile = $this->getLogFile();
 
         if ($logFile === false) {
-            exit;
+            return 0;
         }
 
-        file_put_contents($logFile, $message, FILE_APPEND);
+        $logEntry = "[" . date('Y-m-d H:i:s') . "] - " . $message . PHP_EOL;
+
+        file_put_contents($logFile, $logEntry, FILE_APPEND);
     }
 
-    function getLogFile() : mixed
+    function getLogFile(): mixed
     {
         $fileName = "museum.log";
         $setting = json_decode(file_get_contents("setting.json"), true);
@@ -24,8 +27,9 @@ class Logger
             return false;
         }
 
-        if (!empty($setting['logs'])) {
+        if (empty($setting['logs'])) {
             $setting['logs'] = $fileName;
+            file_put_contents("setting.json", json_encode($setting));
             return $fileName;
         }
 
