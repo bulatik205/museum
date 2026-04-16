@@ -1,0 +1,16 @@
+{
+    "cli": {
+        "name": "museum",
+        "github": "https://github.com/bulatik205/museum",
+        "version": "1.0.0",
+        "help": "php museum --help",
+        "description": ""
+    },
+    "web": {
+        "name": "museum-web",
+        "github": "https://github.com/bulatik205/museum-web",
+        "version": "1.0.0",
+        "help": "php museum --help",
+        "description": ""
+    }
+}

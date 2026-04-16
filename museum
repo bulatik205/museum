@@ -1,0 +1,29 @@
+<?php
+define('AUTOLOAD_PATH', 'autoload.php');
+
+if (!file_exists(AUTOLOAD_PATH)) {
+    echo "Fatal error: autoload file not found";
+    exit;
+}
+
+require AUTOLOAD_PATH;
+
+use App\Logger\Logger;
+use App\Controllers\Parser;
+
+$logger = new Logger;
+$parser = new Parser($argv);
+$command = $parser->getCommand();
+
+use App\Handlers\Web;
+
+switch ($command) {
+    case 'web':
+        $web = new Web;
+        $retry = $web->up($parser->getProjectFolder());
+        echo $retry;
+
+    case '--help':
+        echo "Welcome to Museum!\n\nCommands:\nphp museum web ?new_folder_name      - this command generate new web project";
+}
+exit;
