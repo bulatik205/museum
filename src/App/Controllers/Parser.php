@@ -13,4 +13,8 @@ class Parser {
     public function getCommand() {
         return $this->command[1] ?? 'main';
     }
+
+    public function getProjectFolder() {
+        return $this->command[2] ?? bin2hex(random_bytes(4));
+    }
 }
