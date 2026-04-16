@@ -24,12 +24,23 @@ class Web
             throw new Exception("Folder {$source} does not exist");
         }
 
+        $parentDir = dirname($destination);
+        if (!is_writable($parentDir)) {
+            throw new Exception("Parent directory '{$parentDir}' is not writable");
+        }
+
+        if (is_dir($destination)) {
+            throw new Exception("Destination folder '{$destination}' already exists. Choose unique name.");
+        }
+
         if (!is_dir($destination)) {
-            mkdir($destination, 0777, true);
+            if (!mkdir($destination, 0777, true)) {
+                throw new Exception("Failed to create directory {$destination}");
+            }
         }
 
         $items = scandir($source);
-        
+
         foreach ($items as $item) {
             if ($item === '.' || $item === '..') {
                 continue;
