@@ -1,11 +1,28 @@
 # 🏛️ Museum project
 
+## Установка:
+
+- Установить php 8.0+
+- Установить museum: `git clone https://github.com/bulatik205/museum.git`
+
+## Команды
+
+<p>Минимальная справка:</p>
+
+`php museum --help`
+
+<p>Создать директорию с сайтом:</p>
+
+`php museum web ?new_folder_name` 
+
+<p><code>new_folder_name</code> - это папка, которую надо создать. В нее загрузится весь скелет сайта. Если не указать, то сгенерируется папка с названием <code>bin2hex(random_bytes(4))</code></p>
+
 ## Roadmap:
 
 ### MVP
 
-- Функционал, копирующий папку web создавая новый скелет
-- Базовый интерфейс CLI: `php museum make project-name`
+- Функционал, копирующий папку web создавая новый скелет [✅]
+- Базовый интерфейс CLI: `php museum make project-name` [✅]
 
 ### После MVP
 
