@@ -22,8 +22,9 @@ switch ($command) {
         $web = new Web;
         $retry = $web->up($parser->getProjectFolder());
         echo $retry;
-
+        break;
     case '--help':
         echo "Welcome to Museum!\n\nCommands:\nphp museum web ?new_folder_name      - this command generate new web project";
+        break;
 }
 exit;
